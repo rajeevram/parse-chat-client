@@ -1,6 +1,6 @@
-# Chattter
+# ChattterBox
 
-Chatter is a chat app using an [open source Parse](http://parseplatform.org/) backend.
+ChatterBox is a chat app using an [open source Parse](http://parseplatform.org/) backend.
 
 ## User Stories
 

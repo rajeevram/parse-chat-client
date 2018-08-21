@@ -10,8 +10,8 @@
 		06044AB36992DE993139615D /* Pods_Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8CDDC2725107DB6FDE2AE3 /* Pods_Parse.framework */; };
 		28D766FFA01326E7D4B03818 /* Pods_ParseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E07CCBF9541F48E711AE71 /* Pods_ParseUITests.framework */; };
 		9A914E838919C0C099126116 /* Pods_ParseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179BB8FDEE82249968EFE46F /* Pods_ParseTests.framework */; };
+		BBCBD13B212B9C1500CDABC8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCBD13A212B9C1500CDABC8 /* LoginViewController.swift */; };
 		BBE143D6212B99E600C0A08E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE143D5212B99E600C0A08E /* AppDelegate.swift */; };
-		BBE143D8212B99E600C0A08E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE143D7212B99E600C0A08E /* ViewController.swift */; };
 		BBE143DB212B99E600C0A08E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE143D9212B99E600C0A08E /* Main.storyboard */; };
 		BBE143DD212B99E800C0A08E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE143DC212B99E800C0A08E /* Assets.xcassets */; };
 		BBE143E0212B99E800C0A08E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE143DE212B99E800C0A08E /* LaunchScreen.storyboard */; };
@@ -42,9 +42,9 @@
 		3E8CDDC2725107DB6FDE2AE3 /* Pods_Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		778BA7B7E66FCEBD08135F60 /* Pods-Parse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parse.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parse/Pods-Parse.release.xcconfig"; sourceTree = "<group>"; };
 		892DD84F451EE3AB40040294 /* Pods-ParseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParseTests/Pods-ParseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BBCBD13A212B9C1500CDABC8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BBE143D2212B99E600C0A08E /* Parse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE143D5212B99E600C0A08E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BBE143D7212B99E600C0A08E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBE143DA212B99E600C0A08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBE143DC212B99E800C0A08E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBE143DF212B99E800C0A08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,11 +125,11 @@
 			isa = PBXGroup;
 			children = (
 				BBE143D5212B99E600C0A08E /* AppDelegate.swift */,
-				BBE143D7212B99E600C0A08E /* ViewController.swift */,
 				BBE143D9212B99E600C0A08E /* Main.storyboard */,
 				BBE143DC212B99E800C0A08E /* Assets.xcassets */,
 				BBE143DE212B99E800C0A08E /* LaunchScreen.storyboard */,
 				BBE143E1212B99E800C0A08E /* Info.plist */,
+				BBCBD13A212B9C1500CDABC8 /* LoginViewController.swift */,
 			);
 			path = Parse;
 			sourceTree = "<group>";
@@ -377,7 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBE143D8212B99E600C0A08E /* ViewController.swift in Sources */,
+				BBCBD13B212B9C1500CDABC8 /* LoginViewController.swift in Sources */,
 				BBE143D6212B99E600C0A08E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
