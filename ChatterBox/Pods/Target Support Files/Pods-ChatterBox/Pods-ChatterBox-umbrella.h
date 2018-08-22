@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_ParseUITestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_ParseUITestsVersionString[];
+FOUNDATION_EXPORT double Pods_ChatterBoxVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_ChatterBoxVersionString[];
 
