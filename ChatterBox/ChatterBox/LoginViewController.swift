@@ -27,6 +27,20 @@ class LoginViewController: UIViewController {
     
     // Event Handlers
 
+//    @IBAction func onTapSignUp(_ sender: Any) {
+//        let newUser = PFUser()
+//        newUser.username = usernameTextField.text
+//        newUser.password = passwordTextField.text
+//        newUser.signUpInBackground { (success, error) in
+//            if let error = error {
+//                print(error.localizedDescription)
+//            } else {
+//                print("Registered successfully!")
+//                // manually segue to logged in view
+//            }
+//        }
+//    }
+    
     @IBAction func onTapSignUp(_ sender: Any) {
         let newUser = PFUser()
         newUser.username = usernameTextField.text
@@ -36,12 +50,12 @@ class LoginViewController: UIViewController {
                 print(error.localizedDescription)
             } else {
                 print("Registered successfully!")
-                // manually segue to logged in view
             }
         }
     }
     
     @IBAction func onTapLogIn(_ sender: Any) {
+        print("login")
     }
     
 }
