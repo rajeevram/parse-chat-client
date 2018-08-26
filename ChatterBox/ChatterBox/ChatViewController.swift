@@ -24,7 +24,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         chatTableView.delegate = self as UITableViewDelegate
         chatTableView.dataSource = self as UITableViewDataSource
-        chatTableView.rowHeight = 50
+        chatTableView.rowHeight = UITableViewAutomaticDimension
+        chatTableView.estimatedRowHeight = 50
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.retrieveChatMessages), userInfo: nil, repeats: true)
         chatTableView.reloadData()
     }
@@ -46,6 +47,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func onSend(_ sender: Any) {
         let newMessage = PFObject(className: "Messages")
         newMessage["text"] = typeMessageTextField.text ?? ""
+        newMessage["user"] = PFUser.current()
         newMessage.saveInBackground { (success, error) in
             if success {
                 print("The message was saved!")
@@ -62,6 +64,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         let query = PFQuery(className: "Messages")
         query.addDescendingOrder("createdAt")
         query.limit = 20
+        query.includeKey("user")
         query.findObjectsInBackground { (messages, error) in
             if let messages = messages {
                 self.chatMessages = messages
@@ -80,9 +83,18 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Dequeue a reuseable chat call
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
+        // Retrieve the PFObject at the appropriate cell number
         let chatMessage = chatMessages[indexPath.row]
+        // Set the chat message
         cell.chatMessageLabel.text = chatMessage["text"] as? String
+        // Set the username
+        if let user = chatMessage["user"] as? PFUser {
+            cell.usernameLabel.text = user.username
+        } else {
+            cell.usernameLabel.text = "???"
+        }
         return cell;
     }
     

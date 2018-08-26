@@ -45,11 +45,22 @@ class LoginViewController: UIViewController {
         let password = passwordTextField.text!
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if (error != nil) {
-                print("Failed to log in!")
+                self.displayErrorAlert()
+                //print("Failed to log in!")
             } else {
                 print("Logging in now!")
                 self.performSegue(withIdentifier: "LoginSegue", sender: nil)
             }
+        }
+    }
+    
+    func displayErrorAlert() {
+        let alertController = UIAlertController(title: "Login Failed!", message: "Please enter a valid username and password.", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Try Again", style: .default)
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true) {
+            self.usernameTextField.text = ""
+            self.passwordTextField.text = ""
         }
     }
    

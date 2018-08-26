@@ -37,7 +37,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMX-eZ-Zt3">
                                 <rect key="frame" x="66" y="219" width="48" height="30"/>
@@ -107,24 +107,39 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="50" id="ye0-82-vct" customClass="ChatCell" customModule="ChatterBox" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="75" id="ye0-82-vct" customClass="ChatCell" customModule="ChatterBox" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ye0-82-vct" id="un3-iW-MK7">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The chat message goes here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctr-Lw-cJ4">
-                                                    <rect key="frame" x="15" y="11" width="313" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmm-qJ-goQ">
+                                                    <rect key="frame" x="16" y="8" width="311" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The chat message goes here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctr-Lw-cJ4">
+                                                    <rect key="frame" x="16" y="37" width="311" height="29.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ctr-Lw-cJ4" firstAttribute="leading" secondItem="rmm-qJ-goQ" secondAttribute="leading" id="4Yc-DC-p1C"/>
+                                                <constraint firstItem="ctr-Lw-cJ4" firstAttribute="trailing" secondItem="rmm-qJ-goQ" secondAttribute="trailing" id="6YY-cb-ATi"/>
+                                                <constraint firstItem="ctr-Lw-cJ4" firstAttribute="leading" secondItem="un3-iW-MK7" secondAttribute="leading" constant="16" id="AnE-ub-1LB"/>
+                                                <constraint firstAttribute="trailing" secondItem="ctr-Lw-cJ4" secondAttribute="trailing" constant="16" id="d4V-dA-CfS"/>
+                                                <constraint firstAttribute="bottom" secondItem="ctr-Lw-cJ4" secondAttribute="bottom" constant="8" id="dR3-JX-UWT"/>
+                                                <constraint firstItem="rmm-qJ-goQ" firstAttribute="top" secondItem="un3-iW-MK7" secondAttribute="top" constant="8" id="e5x-ti-X9J"/>
+                                                <constraint firstItem="ctr-Lw-cJ4" firstAttribute="top" secondItem="rmm-qJ-goQ" secondAttribute="bottom" constant="8" id="ktD-Xp-lvM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="chatMessageLabel" destination="ctr-Lw-cJ4" id="Km8-L4-jKp"/>
+                                            <outlet property="usernameLabel" destination="rmm-qJ-goQ" id="u2K-W1-lKI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
