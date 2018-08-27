@@ -33,8 +33,9 @@ class LoginViewController: UIViewController {
         newUser.signUpInBackground { (success, error) in
             if let error = error {
                 print(error.localizedDescription)
+                self.displaySignupErrorAlert()
             } else {
-                print("New user created!")
+                //print("New user created!")
                 self.performSegue(withIdentifier: "LoginSegue", sender: nil)
             }
         }
@@ -45,17 +46,27 @@ class LoginViewController: UIViewController {
         let password = passwordTextField.text!
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if (error != nil) {
-                self.displayErrorAlert()
+                self.displayLoginErrorAlert()
                 //print("Failed to log in!")
             } else {
-                print("Logging in now!")
+                //print("Logging in now!")
                 self.performSegue(withIdentifier: "LoginSegue", sender: nil)
             }
         }
     }
     
-    func displayErrorAlert() {
-        let alertController = UIAlertController(title: "Login Failed!", message: "Please enter a valid username and password.", preferredStyle: .alert)
+    func displayLoginErrorAlert() {
+        let alertController = UIAlertController(title: "Login Failed!", message: "Please enter a valid username and password combination.", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Try Again", style: .default)
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true) {
+            self.usernameTextField.text = ""
+            self.passwordTextField.text = ""
+        }
+    }
+    
+    func displaySignupErrorAlert() {
+        let alertController = UIAlertController(title: "Signup Failed!", message: "That username is already taken. Please choose another one.", preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "Try Again", style: .default)
         alertController.addAction(dismissAction)
         present(alertController, animated: true) {
