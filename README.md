@@ -1,20 +1,24 @@
 # ChattterBox
 
-ChatterBox is a chat app using an [open source Parse](http://parseplatform.org/) backend.
+ChatterBox is a mobile messaging application using an [open source Parse](http://parseplatform.org/) backend.
 
 ## User Stories
 
+The following user stories are complete:
+
 - [X] User can sign up and sign in to the login screen
-- [X] User sees alerts for login exceptions, i.e. "account already exists", "wrong credentials", etc.
+- [X] User sees alerts for login exceptions and errors
 - [X] User can compose and send chat messages
 - [X] User can view a list of chat messages in chronological order
-- [X] Automatically Adjust Cell Size to Fit Text
+- [X] Automatically adjust cell size to fit text
 - [X] Username of chat author is displayed in each chat message
-- [X] Persist Logged in User
+- [X] Persist logged-in user
 
 ## Walkthrough
 
 ## Notes
+
+Challenge Story: Allow user to create, join, and leave chatrooms.
 
 ## License
 
