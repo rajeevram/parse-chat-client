@@ -35,11 +35,16 @@ class LoginViewController: UIViewController {
                 print(error.localizedDescription)
                 self.displaySignupErrorAlert()
             } else {
-                //print("New user created!")
-                self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+                self.displaySignupSuccessAlert()
+                //self.performSegue(withIdentifier: "LoginSegue", sender: nil)
             }
         }
     }
+    
+    @IBAction func endEnteringCredentials(_ sender: Any) {
+        view.endEditing(true);
+    }
+    
     
     @IBAction func onLogin(_ sender: Any) {
         let username = usernameTextField.text!
@@ -47,9 +52,7 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if (error != nil) {
                 self.displayLoginErrorAlert()
-                //print("Failed to log in!")
             } else {
-                //print("Logging in now!")
                 self.performSegue(withIdentifier: "LoginSegue", sender: nil)
             }
         }
@@ -73,6 +76,15 @@ class LoginViewController: UIViewController {
             self.usernameTextField.text = ""
             self.passwordTextField.text = ""
         }
+    }
+    
+    func displaySignupSuccessAlert() {
+        let alertController = UIAlertController(title: "Signup Successful!", message: "New account created.", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Continue", style: .default) { (action) in
+            self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+        }
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true) { }
     }
    
 }

@@ -44,6 +44,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.performSegue(withIdentifier: "LogoutSegue", sender: nil)
     }
     
+    @IBAction func endTypingMessage(_ sender: Any) {
+        view.endEditing(true);
+    }
+    
     @IBAction func onSend(_ sender: Any) {
         let newMessage = PFObject(className: "Messages")
         newMessage["text"] = typeMessageTextField.text ?? ""
