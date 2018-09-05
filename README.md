@@ -16,6 +16,8 @@ The following user stories are complete:
 
 ## Walkthrough
 
+<img src='https://imgur.com/2X6Fasm.gif' title='ChatterBox Walkthrough' width='' alt='Parse Chat Client' />
+
 ## Notes
 
 Challenge Story: Allow user to create, join, and leave chatrooms.
