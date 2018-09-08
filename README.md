@@ -1,4 +1,4 @@
-# ChattterBox
+# ChatterBox
 
 ChatterBox is a mobile messaging application using an [open source Parse](http://parseplatform.org/) backend.
 
