@@ -11,21 +11,15 @@ import Parse
 
 class LoginViewController: UIViewController {
 
-    // UI, UX Outlet Variables
+    /*----------UI, UX Outlet Variables----------*/
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    /*----------Event Handlers----------*/
     
-    // Event Handlers
     @IBAction func onSignup(_ sender: Any) {
         let newUser = PFUser()
         newUser.username = usernameTextField.text!
@@ -36,7 +30,6 @@ class LoginViewController: UIViewController {
                 self.displaySignupErrorAlert()
             } else {
                 self.displaySignupSuccessAlert()
-                //self.performSegue(withIdentifier: "LoginSegue", sender: nil)
             }
         }
     }
@@ -44,7 +37,6 @@ class LoginViewController: UIViewController {
     @IBAction func endEnteringCredentials(_ sender: Any) {
         view.endEditing(true);
     }
-    
     
     @IBAction func onLogin(_ sender: Any) {
         let username = usernameTextField.text!
@@ -57,6 +49,8 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    /*----------Display Alert Methods----------*/
     
     func displayLoginErrorAlert() {
         let alertController = UIAlertController(title: "Login Failed!", message: "Please enter a valid username and password combination.", preferredStyle: .alert)

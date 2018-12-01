@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -132,29 +132,40 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmm-qJ-goQ">
-                                                    <rect key="frame" x="16" y="8" width="311" height="21"/>
+                                                    <rect key="frame" x="44" y="8" width="283" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The chat message goes here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctr-Lw-cJ4">
-                                                    <rect key="frame" x="16" y="37" width="311" height="29.5"/>
+                                                    <rect key="frame" x="16" y="36" width="311" height="30.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qbf-da-kYC">
+                                                    <rect key="frame" x="16" y="8" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="vJ7-U0-7Q8"/>
+                                                        <constraint firstAttribute="width" constant="20" id="zPH-1H-zO8"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ctr-Lw-cJ4" firstAttribute="leading" secondItem="rmm-qJ-goQ" secondAttribute="leading" id="4Yc-DC-p1C"/>
+                                                <constraint firstItem="ctr-Lw-cJ4" firstAttribute="leading" secondItem="Qbf-da-kYC" secondAttribute="leading" id="4Zr-nR-H6W"/>
                                                 <constraint firstItem="ctr-Lw-cJ4" firstAttribute="trailing" secondItem="rmm-qJ-goQ" secondAttribute="trailing" id="6YY-cb-ATi"/>
                                                 <constraint firstItem="ctr-Lw-cJ4" firstAttribute="leading" secondItem="un3-iW-MK7" secondAttribute="leading" constant="16" id="AnE-ub-1LB"/>
+                                                <constraint firstItem="rmm-qJ-goQ" firstAttribute="leading" secondItem="Qbf-da-kYC" secondAttribute="trailing" constant="8" id="HNf-Rz-nJ8"/>
+                                                <constraint firstItem="Qbf-da-kYC" firstAttribute="leading" secondItem="un3-iW-MK7" secondAttribute="leading" constant="16" id="KIO-be-FZ9"/>
                                                 <constraint firstAttribute="trailing" secondItem="ctr-Lw-cJ4" secondAttribute="trailing" constant="16" id="d4V-dA-CfS"/>
                                                 <constraint firstAttribute="bottom" secondItem="ctr-Lw-cJ4" secondAttribute="bottom" constant="8" id="dR3-JX-UWT"/>
                                                 <constraint firstItem="rmm-qJ-goQ" firstAttribute="top" secondItem="un3-iW-MK7" secondAttribute="top" constant="8" id="e5x-ti-X9J"/>
                                                 <constraint firstItem="ctr-Lw-cJ4" firstAttribute="top" secondItem="rmm-qJ-goQ" secondAttribute="bottom" constant="8" id="ktD-Xp-lvM"/>
+                                                <constraint firstItem="rmm-qJ-goQ" firstAttribute="top" secondItem="Qbf-da-kYC" secondAttribute="top" id="ltQ-hx-7Em"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="avatarImage" destination="Qbf-da-kYC" id="bN7-2v-tAf"/>
                                             <outlet property="chatMessageLabel" destination="ctr-Lw-cJ4" id="Km8-L4-jKp"/>
                                             <outlet property="usernameLabel" destination="rmm-qJ-goQ" id="u2K-W1-lKI"/>
                                         </connections>

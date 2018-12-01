@@ -14,12 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
-                configuration.applicationId = "myID"
-                configuration.clientKey = "shiva"
+                configuration.applicationId = "ChatterBoxID"
+                configuration.clientKey = "ChatterBoxMaster"
                 configuration.server = "https://desolate-brook-73537.herokuapp.com/parse"
             })
         )

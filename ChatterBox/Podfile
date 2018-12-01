@@ -7,6 +7,7 @@ target 'ChatterBox' do
 
   # Pods for ChatterBox
   pod 'Parse'
+  pod 'AlamofireImage'
 
   target 'ChatterBoxTests' do
     inherit! :search_paths
